@@ -11,8 +11,11 @@ Install Node.js and npm https://nodejs.org/en/
 
 # Firebase porject setting
 Project name :ser517
+
 Project ID :ser517-efb2e
+
 Project number :386357350483
+
 Parent org/folder in GCP : asu.edu
 
 Public settings
