@@ -12,7 +12,7 @@ Install Node.js and npm https://nodejs.org/en/
 # express version 4.17.1
 
 
-# Backend: React
+# Frontend: React
 
 
 # Firebase porject setting
