@@ -13,7 +13,7 @@ app.post('/login', (req, res) => {
     const pwd = req.body.password
     if(email != "hongqi@gmail.com" || pwd != "1234"){
         console.log("incorrect password or email\n" + email + "\n" + pwd)
-        res.json({result: null })
+        res.json({ result: null })
         return;
     }
 
