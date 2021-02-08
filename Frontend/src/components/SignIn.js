@@ -57,7 +57,11 @@ export default function SignIn() {
             email: email,
             password: password
         }).then((res) => {
-            console.log(res.data.result)
+            if(res.data.result == null){
+                alert("incorrect email or password")
+            }else{
+                console.log(res.data.result)
+            }
         })
     }
     function handleEmail(e) {
