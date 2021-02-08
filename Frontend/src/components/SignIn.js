@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Axios from 'axios';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -47,8 +48,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignIn() {
-  const classes = useStyles();
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
+    function login() {
+        console.log("email: " + email + "\n password: " + password)
+        Axios.post("http://localhost:9000/login", {
+            email: email,
+            password: password
+        }).then((res) => {
+            console.log(res.data.result)
+        })
+    }
+    function handleEmail(e) {
+        setEmail(e.target.value)
+        //console.log(email)
+    }
+    function handlePassword(e) {
+        setPassword(e.target.value)
+        //console.log(email)
+    }
+  const classes = useStyles();
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -61,6 +81,7 @@ export default function SignIn() {
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
+            onChange={ handleEmail }
             variant="outlined"
             margin="normal"
             required
@@ -72,6 +93,7 @@ export default function SignIn() {
             autoFocus
           />
           <TextField
+          onChange={ handlePassword }
             variant="outlined"
             margin="normal"
             required
@@ -87,7 +109,7 @@ export default function SignIn() {
             label="Remember me"
           />
           <Button
-            type="submit"
+            onClick={login}
             fullWidth
             variant="contained"
             color="primary"
