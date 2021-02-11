@@ -1,3 +1,26 @@
+
+# Student Landing page Demo
+
+## How to Run :
+* Clone this branch onto your local system.
+* Navigate to the directory ``Frontend``
+* Setup the basic React web app for which instructions are below. This is so that the necessary node modules are installed.
+* You will see that the directory structure for the webapp and Frontend are very similar.
+* Copy all the files in ``Frontend -> src`` to your local react webapp instance
+* Start the webapp with the command below
+
+## Demo details:
+* Demo only contains UI and Frontend
+* Functionalities to be added:
+  * Thumbs up
+  * Thumbs down
+  * Info
+  * Help
+  * Top-left corner menu drawer
+  * Logout
+  * Clickability of subject tiles
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
