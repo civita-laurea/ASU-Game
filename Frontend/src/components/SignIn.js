@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect, useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -50,9 +51,9 @@ const useStyles = makeStyles((theme) => ({
 export default function SignIn() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
+    const history = useHistory();
     function login() {
-        console.log("email: " + email + "\n password: " + password)
+        //console.log("email: " + email + "\n password: " + password)
         Axios.post("http://localhost:9000/login", {
             email: email,
             password: password
@@ -61,16 +62,16 @@ export default function SignIn() {
                 alert("incorrect email or password")
             }else{
                 console.log(res.data.result)
+                // redirect from one page to another
+                history.push('/student')
             }
         })
     }
     function handleEmail(e) {
         setEmail(e.target.value)
-        //console.log(email)
     }
     function handlePassword(e) {
         setPassword(e.target.value)
-        //console.log(email)
     }
   const classes = useStyles();
   return (
