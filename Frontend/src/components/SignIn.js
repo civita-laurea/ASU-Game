@@ -53,7 +53,6 @@ export default function SignIn() {
     const [password, setPassword] = useState('')
     const history = useHistory();
     function login() {
-        //console.log("email: " + email + "\n password: " + password)
         Axios.post("http://localhost:9000/login", {
             email: email,
             password: password
@@ -65,6 +64,8 @@ export default function SignIn() {
                 // redirect from one page to another
                 history.push('/student')
             }
+        }).catch(error =>{
+            console.log("server error" + error)
         })
     }
     function handleEmail(e) {
