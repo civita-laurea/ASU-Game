@@ -60,9 +60,19 @@ export default function SignIn() {
             if(res.data.result == null){
                 alert("incorrect email or password")
             }else{
-                console.log(res.data.result)
+                console.log("...." + res.data.result)
+                Axios.get("http://localhost:9000/student", {
+                    headers: {
+                        'Content-type': 'application/json',
+                        'Authorization': 'Bearer ' + res.data.result
+                    }
+                }).then((res) =>{
+                    console.log(res)
+                    history.push('/student')
+                }).catch(error => {
+                    console.log(error)
+                })
                 // redirect from one page to another
-                history.push('/student')
             }
         }).catch(error =>{
             console.log("server error" + error)

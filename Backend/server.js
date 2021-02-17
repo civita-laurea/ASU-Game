@@ -27,7 +27,7 @@ app.post('/login', (req, res) => {
     //const randomToken = crypto.randomBytes(64).toString('hex')
     //console.log("gennerate random 64 bytes token\n")
     //console.log(randomToken)
-    const role = "student" // this one will be get in the database
+    const role = "student" 
     const user = {  email: email,
                     role: role
                  }
@@ -36,7 +36,7 @@ app.post('/login', (req, res) => {
     res.json({ result: accessToken })
     console.log("return the access token to client\n" + accessToken)
 })
-
+// this method is used to verify the token
 function authenticationToken(req, res, next){
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
