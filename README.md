@@ -15,7 +15,7 @@ Install Node.js and npm https://nodejs.org/en/
 # Frontend: React
 
 
-# Firebase porject setting
+# Firebase project setting
 Project name :ser517
 
 Project ID :ser517-efb2e
