@@ -48,8 +48,6 @@ export default function TitlebarGridList() {
               actionIcon={
                 <div>
                 <ThumbUpIcon className={classes.icon} />
-                <InfoIcon className={classes.icon} />
-                <ThumbDownIcon className={classes.icon} />
                 </div>
               }
             />
