@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream
-const token = await res.json();
-localStorage.setItem('token', token);
-=======
 // const token = await res.json();
 // localStorage.setItem('token', token);
->>>>>>> Stashed changes
 
 require ("dotenv").config();
 const express = require("express");
@@ -14,21 +9,12 @@ const crypto = require("crypto");
 const bodyParser = require ("body-parser");
 const app = express();
 
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 app.use(bodyParser.json());
 app.use(cor());
 
 app.get('/student', authenticationToken, (req, res) => {
     res.json(req.user)
-<<<<<<< Updated upstream
-
-    if (localStorage.length )
-
-=======
->>>>>>> Stashed changes
 })
 
 app.post('/login', (req, res) => {
@@ -50,13 +36,7 @@ app.post('/login', (req, res) => {
                     role: role
                  }
     //const accessToken = jwt.sign(user, randomToken)
-<<<<<<< Updated upstream
-    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET) 
-    res.json({ result: accessToken })
-    console.log("return the access token to client\n" + accessToken)
-=======
-     
-    // const accessToken = jwt.sign(user,process.body.ACCESS_TOKEN_SECRET)
+
 
     if (localStorage.length < 0){
         const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET,{expiresIn: "86400s"}) 
@@ -77,7 +57,6 @@ app.post('/login', (req, res) => {
     }
 
 
->>>>>>> Stashed changes
 })
 // this method is used to verify the token
 function authenticationToken(req, res, next){
@@ -92,24 +71,7 @@ function authenticationToken(req, res, next){
     })
 }
 
-// username is in the form { username: "my cool username" }
-// ^^the above object structure is completely arbitrary
-<<<<<<< Updated upstream
-function generateAccessToken(username) {
-    // expires after half and hour (1800 seconds = 30 minutes)
-    return jwt.sign(username, process.env.TOKEN_SECRET, { expiresIn: '1800s' });
-}
 
 app.listen(9000, () => {
     console.log("server starts listening at localhost port 9000...")
 })
-=======
-// function generateAccessToken(username) {
-//     // expires after half and hour (1800 seconds = 30 minutes)
-//     return jwt.sign(username, process.env.TOKEN_SECRET, { expiresIn: '1800s' });
-// }
-
-app.listen(9000, () => {
-    console.log("server starts listening at localhost port 9000...")
-})
->>>>>>> Stashed changes
