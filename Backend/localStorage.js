@@ -38,7 +38,7 @@ app.post('/login', (req, res) => {
     //const accessToken = jwt.sign(user, randomToken)
 
 
-    if (localStorage.length < 0){
+    if (localStorage.length <= 0){
         const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET,{expiresIn: "86400s"}) 
         res.json({ result: accessToken })
         localStorage.setItem("result",accessToken)
