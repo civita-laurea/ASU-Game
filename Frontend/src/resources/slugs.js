@@ -1,6 +1,6 @@
 export default {
     // private
-    dashboard: '/dashboard',
+    dashboard: '/professor',
     profile: '/profile',
     courses: '/courses',
     coursesWork: '/courses/work',
