@@ -1,7 +1,5 @@
 GET http://localhost:9000/student
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhvbmdxaUBnbWFpbC5jb20iLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTYxMzUwNzQ3N30.c6B_Jd5TrKgsMUQSpUABTUwDXZrvOs1G-5coPPDNHcY
-
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhvbmdxaUBnbWFpbC5jb20iLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTYxMzgzNDIyN30.F4_1qRUfAieIdGpjkMVkrndQxDHrZMib2Xr5txX8cL0
 ###
 
 POST http://localhost:9000/login
