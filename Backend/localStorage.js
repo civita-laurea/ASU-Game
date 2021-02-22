@@ -9,3 +9,17 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cor());
 
+fetch('/login',{
+    method: 'GET',
+
+})
+
+// fetch('/user/data', {
+//     method: 'GET',
+//     headers: {
+//       'Authorization': 'Bearer' + authToken
+//     }
+//   })
+//   .then(res => res.json())
+//   .then(data => { console.log(data) })
+//   .catch(err => { console.log(err) })
