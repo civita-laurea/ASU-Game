@@ -31,7 +31,9 @@ if (localStorage.lenth <= 0){
         })
         console.log("continue to use the current token\n" + accessToken)
     } else {
-        
+        const accessToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET)
+        localStorage.setItem("token", accessToken)
+        console.log("return the refresh access token to server\n" + accessToken)
     }
 }
 
