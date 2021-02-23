@@ -15,7 +15,7 @@ const user = {
                 email :email,
                 role: role
             }
-if (localStorage.lenth <= 0){
+if (localStorage.length <= 0){
     const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
     localStorage.setItem("token", accessToken)
     console.log("accept the access token from the server\n" + accessToken)
