@@ -17,6 +17,10 @@ fetch('/login',{
     }
 })
 
+// const token = await res.json();
+
+// localStorage.setItem('token', token);
+
 // fetch('/user/data', {
 //     method: 'GET',
 //     headers: {
