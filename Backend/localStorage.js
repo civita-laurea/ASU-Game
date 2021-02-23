@@ -11,7 +11,10 @@ app.use(cor());
 
 fetch('/login',{
     method: 'GET',
-
+    headers: {
+        Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhvbmdxaUBnbWFpbC5jb20iLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTYxMzgzNDIyN30.F4_1qRUfAieIdGpjkMVkrndQxDHrZMib2Xr5txX8cL0
+        
+    }
 })
 
 // fetch('/user/data', {
