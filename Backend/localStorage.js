@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cor());
 
 const email = "hongqi@gmail.com"
-const role = "studnet"
+const role = "student"
 const user = {
                 email :email,
                 role: role
