@@ -1,17 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const useStateWithLocalStorage = locatStorageKey => {
+  const [value, setValue] = React.useState(
+    localStorage.getItem(locatStorageKey) || ''
+  );
+  
+  React.useEffect(() => {
+    localStorage.setItem(locatStorageKey, value);
+  }, [value]);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  return [value, setValue];
+};
+
+const App = () => {
+  const [value, setValue] = useStateWithLocalStorage(
+    'token'
+  );
+   
+  const onChange = event => setValue(event.target.value);
+  
+  return (
+    <div>
+      <h1>Local Storage</h1>
+      <input value={value} type="text" onChange={onChange} />
+      <p>{value}</p>
+    </div>
+  );
+};
+
+export default App;
