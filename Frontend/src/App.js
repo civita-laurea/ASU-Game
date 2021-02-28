@@ -19,15 +19,15 @@ const App = () => {
 
   const onChange = event => setValue(event.target.value);
 
-//   return (
-//     <div>
-//       <h1>Local Storage</h1>
+  return (
+    <div>
+      <h1>Local Storage</h1>
 
-//       <input value={value} type="text" onChange={onChange} />
+      <input value={value} type="text" onChange={onChange} />
 
-//       <p>{value}</p>
-//     </div>
-//   );
+      <p>{value}</p>
+    </div>
+  );
 };
 
 export default App;
