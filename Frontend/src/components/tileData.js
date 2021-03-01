@@ -15,15 +15,18 @@ const tileData = [
     {
     img: math,
     title: 'Math',
+    description: 'Mathematics involves Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eleifend sem finibus ante finibus vestibulum. Curabitur scelerisque dolor eget quam convallis, vel tristique diam dapibus.',
     },
     {
     img: statistics,
     title: 'Statistics',
     featured: true,
+    description: 'Statistics is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eleifend sem finibus ante finibus vestibulum. Curabitur scelerisque dolor eget quam convallis, vel tristique diam dapibus.',
     },
     {
       img: econ,
       title: 'Economics',
+      description: 'Economics is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eleifend sem finibus ante finibus vestibulum. Curabitur scelerisque dolor eget quam convallis, vel tristique diam dapibus.',
     },
     {
       img: geo,

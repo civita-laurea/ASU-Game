@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
+import Toolbar from '@material-ui/core/Toolbar';
 
 function LinearProgressWithLabel(props) {
   return (
@@ -41,6 +42,7 @@ LinearProgressWithLabel.propTypes = {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    flex: 'wrap',
     justifyContent: 'space-around',
     overflowY: 'scroll',
     backgroundColor: theme.palette.background.paper,
@@ -62,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
         'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
   },
   icon: {
-    color: 'rgba(255, 255, 255, 0.9)',
+    color: 'rgba(0, 0, 0, 0.9)',
     margin: 5,
   },
   bar: {
@@ -70,6 +72,9 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     height: 140,
+  },
+  toolbarButtons: {
+    marginLeft: 'auto',
   },
 }));
 
@@ -89,6 +94,7 @@ export default function TitlebarGridList() {
 
   return (
 <div className={classes.root}>
+ 
         <GridList className={classes.gridList} cellHeight={300} >
           {tileData.map((tile) => (
               <Card key={tile.img} className={classes.card}>
@@ -99,8 +105,9 @@ export default function TitlebarGridList() {
                       title={tile.title}
                   />
                   <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                      {tile.title}
+                    <Typography variant="h5" color="textPrimary" component="h5">{tile.title}</Typography>
+                    <Typography variant="body2" color="textSecondary" component="p" overflowY="scroll">
+                      {tile.description}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
