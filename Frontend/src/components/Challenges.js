@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TitlebarGridList() {
+export default function TitlebarGridListChallenges() {
   const classes = useStyles();
   const [progress, setProgress] = React.useState(10);
 

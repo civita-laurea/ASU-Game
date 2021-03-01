@@ -38,7 +38,7 @@ const tileData = [
       title: 'Political Science',
       featured: true,
     },
-    {
+   {
       img: english,
       title: 'English',
     },
