@@ -1,59 +1,123 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import tileData from './tileData';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import PropTypes from 'prop-types';
+import Box from '@material-ui/core/Box';
+
+function LinearProgressWithLabel(props) {
+  return (
+      <Box display="flex" alignItems="center">
+        <Box width="100%" mr={1}>
+          <LinearProgress variant="determinate" {...props} />
+        </Box>
+        <Box minWidth={35}>
+          <Typography variant="body2" color="textSecondary">{`${Math.round(
+              props.value,
+          )}%`}</Typography>
+        </Box>
+      </Box>
+  );
+}
+
+LinearProgressWithLabel.propTypes = {
+  /**
+   * The value of the progress indicator for the determinate and buffer variants.
+   * Value between 0 and 100.
+   */
+  value: PropTypes.number.isRequired,
+};
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-    overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 1000,
-    height: 1000,
+    flexWrap: 'wrap',
+    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+    transform: 'translateZ(0)',
+    padding: 50
+  },
+  card: {
+    width: 400,
+    margin: 10
   },
   titleBar: {
     background:
-      'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+        'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
   },
   icon: {
-    color: 'rgba(255, 255, 255, 0.54)',
+    color: 'rgba(0, 0, 0, 0.54)',
+    margin: 5,
+  },
+  bar: {
+    width: '100%',
+  },
+  media: {
+    height: 140,
   },
 }));
 
 export default function TitlebarGridList() {
   const classes = useStyles();
+  const [progress, setProgress] = React.useState(10);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
+    }, 800);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
 
   return (
-    <div className={classes.root}>
-      <GridList cellHeight={300}  spacing={30} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div"></ListSubheader>
-        </GridListTile>
-        {tileData.map((tile) => (
-          <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              actionIcon={
-                <div>
-                <ThumbUpIcon className={classes.icon} />
-                </div>
-              }
-            />
-          </GridListTile>
-        ))}
-      </GridList>
-    </div>
+      <div className={classes.root}>
+        <GridList classes={classes.gridList} cellHeight={300} cols={4}>
+          {tileData.map((tile) => (
+              <Card key={tile.img} className={classes.card}>
+                <CardActionArea>
+                  <CardMedia
+                      className={classes.media}
+                      image={tile.img}
+                      title={tile.title}
+                  />
+                  <CardContent>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                      {tile.title}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <IconButton aria-label = "Like">
+                    <ThumbUpIcon className={classes.icon} />
+                  </IconButton>
+
+                  <div className={classes.bar}>
+                    <LinearProgressWithLabel value={progress} />
+                  </div>
+                </CardActions>
+              </Card>
+
+
+
+
+          ))}
+        </GridList>
+      </div>
   );
 }
