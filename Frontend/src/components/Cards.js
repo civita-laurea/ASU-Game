@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    flexWrap: 'wrap',
+    flexWrap: 'nowrap',
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
     padding: 50
@@ -87,7 +87,7 @@ export default function TitlebarGridList() {
 
   return (
       <div className={classes.root}>
-        <GridList classes={classes.gridList} cellHeight={300} cols={4}>
+        <GridList classes={classes.gridList} cellHeight={300} >
           {tileData.map((tile) => (
               <Card key={tile.img} className={classes.card}>
                 <CardActionArea>
