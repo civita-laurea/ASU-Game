@@ -8,28 +8,28 @@ const emojipedia = [
     // },
     {
       id: 1,
-      emoji: "💪",
+      // emoji: "💪",
       name: "Logic",
       meaning:
         "Stetch your analytic muscles with knights, knaves, logic gates, and more!"
     },
     {
       id: 2,
-      emoji: "🙏",
+      // emoji: "🙏",
       name: "Computer Science Fundamentals",
       meaning:
         "Wrap your mind around computational thinking, from everyday tasks to algorithms."
     },
     {
       id: 3,
-      emoji: "🤣",
+      // emoji: "🤣",
       name: "Introduction to Neural Networks",
       meaning:
         "Learn why neural networks are such flexible tools for learning."
     },
     {
       id: 4,
-      emoji: "🤓",
+      // emoji: "🤓",
       name: "Mathematical Fundamentals",
       meaning:
         "The essential tools for mastering algebra, logic, and number theory!"

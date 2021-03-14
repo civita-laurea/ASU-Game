@@ -22,7 +22,7 @@ function createEntry(emojiTerm) {
   return (
     <Entry
       key={emojiTerm.id}
-      emoji={emojiTerm.emoji}
+      // emoji={emojiTerm.emoji}
       name={emojiTerm.name}
       description={emojiTerm.meaning}
     />
@@ -33,7 +33,7 @@ function App() {
   return (
     <div>
       <h1>
-        <span>Civita Laurea Community</span>
+        <span>Community</span>
       </h1>
       <dl className="dictionary">{emojipedia.map(createEntry)}</dl>
     </div>
