@@ -41,6 +41,20 @@ const emojipedia = [
       name: "Algorithm Fundamentals",
       meaning:
         "How to make computer do what you want, elegantly and efficiently."
+    },
+    {
+      id: 7,
+      
+      name: "Search Engines",
+      meaning:
+        "There's a lot of data out there, learn how to search it effectively."
+    },
+    {
+      id: 8,
+      
+      name: "Applied Computer Science",
+      meaning:
+        "Learn how to use computer science apply in our real world."
     }
   ];
   
