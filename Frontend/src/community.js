@@ -1,4 +1,4 @@
-const emojipedia = [
+const community = [
     
     {
       id: 1,
@@ -86,5 +86,5 @@ const emojipedia = [
     },
   ];
   
-  export default emojipedia;
+  export default community;
   
