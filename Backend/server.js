@@ -1,13 +1,18 @@
-require('dotenv').config()
+require('dotenv').config({path: 'config.env'})
 const express = require('express')
 const jwt = require('jsonwebtoken')
 const cor = require('cors')
 const crypto = require('crypto')
 const bodyParser=require('body-parser');
 const app = express()
-app.use(bodyParser.json());
+const connDB = require('./database/connection')
 
+app.use(bodyParser.json());
 app.use(cor())
+
+const port = process.env.PORT;
+
+connDB()
 
 app.get('/student', authenticationToken, (req, res) => {
     res.json(req.user)
@@ -49,6 +54,7 @@ function authenticationToken(req, res, next){
     })
 }
 
-app.listen(9000, () => {
-    console.log("server starts listening at localhost port 9000...")
+app.listen(port, () => {
+
+    console.log("server starts listening at localhost port " + port)
 })
