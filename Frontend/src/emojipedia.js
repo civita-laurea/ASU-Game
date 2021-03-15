@@ -69,7 +69,14 @@ const emojipedia = [
       name: "Geometry Fundamentals",
       meaning:
         "An intuitive introduction to the essentials of geometry."
-    }
+    },
+    {
+      id: 11,
+      
+      name: "Probability Fundamentals",
+      meaning:
+        "Take a chance and explore the math of unpredictability."
+    },
   ];
   
   export default emojipedia;
