@@ -34,6 +34,13 @@ const emojipedia = [
       name: "Scientific Thinking",
       meaning:
         "Open you eyes to the world around you by solving puzzles with science."
+    },
+    {
+      id: 6,
+      
+      name: "Algorithm Fundamentals",
+      meaning:
+        "How to make computer do what you want, elegantly and efficiently."
     }
   ];
   
