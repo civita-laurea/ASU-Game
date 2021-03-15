@@ -55,6 +55,13 @@ const emojipedia = [
       name: "Applied Computer Science",
       meaning:
         "Learn how to use computer science apply in our real world."
+    },
+    {
+      id: 9,
+      
+      name: "Algebra Fundamentals",
+      meaning:
+        "Supercharge your algebraic intuition and problem solving skills!"
     }
   ];
   
