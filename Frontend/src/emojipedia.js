@@ -77,6 +77,13 @@ const emojipedia = [
       meaning:
         "Take a chance and explore the math of unpredictability."
     },
+    {
+      id: 12,
+      
+      name: "Algebra I",
+      meaning:
+        "Strengthen your algebra skills by exploring factorials, exponents, and the unknown."
+    },
   ];
   
   export default emojipedia;
