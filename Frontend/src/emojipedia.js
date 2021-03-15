@@ -27,7 +27,7 @@ const emojipedia = [
       name: "Mathematical Fundamentals",
       meaning:
         "The essential tools for mastering algebra, logic, and number theory!"
-    }
+    },
     {
       id: 5,
       
