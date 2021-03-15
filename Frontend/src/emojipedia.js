@@ -62,6 +62,13 @@ const emojipedia = [
       name: "Algebra Fundamentals",
       meaning:
         "Supercharge your algebraic intuition and problem solving skills!"
+    },
+    {
+      id: 10,
+      
+      name: "Geometry Fundamentals",
+      meaning:
+        "An intuitive introduction to the essentials of geometry."
     }
   ];
   
