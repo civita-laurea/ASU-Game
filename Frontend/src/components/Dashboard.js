@@ -25,13 +25,14 @@ const geoUrl =
 const MapChart = () => {
   return (
     <ComposableMap
-      
-      projectionConfig={{
-        scale: 100,
-        width: 800,
-        height: 600
-
+    projectionConfig={{
+        scale: 155,
+        rotation: [-11, 0, 0],
       }}
+      width={800}
+      height={400}
+      padding={10}
+      style={{ width: "60%", height: "auto" }} 
     >
       <Graticule stroke="#DDD" />
       <Geographies
@@ -47,6 +48,13 @@ const MapChart = () => {
       <Line
         from={[2.3522, 48.8566]}
         to={[-74.006, 40.7128]}
+        stroke="#FF5533"
+        strokeWidth={4}
+        strokeLinecap="round"
+      />
+      <Line
+        from={[2.3522, 48.8566]}
+        to={[-58.3816, -34.6037]}
         stroke="#FF5533"
         strokeWidth={4}
         strokeLinecap="round"
