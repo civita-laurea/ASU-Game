@@ -6,7 +6,6 @@ import TitlebarGridList from './components/Cards'
 import MyButton from './components/Footer'
 import TitlebarGridListChallenges from './components/Challenges'
 import AddIcon from '@material-ui/icons/Add';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';

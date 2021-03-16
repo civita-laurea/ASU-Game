@@ -112,7 +112,7 @@ const Sales = ({ className, ...rest }) => {
             Last 7 days
           </Button>
         )}
-        title="Progress over time"
+        title="Progress"
       />
       <Divider />
       <CardContent>
