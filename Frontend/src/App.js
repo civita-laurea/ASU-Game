@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './App.css';
 import ButtonAppBar from './components/Header'
-import Sales from './components/Dashboard'
+import MapChart from './components/Dashboard'
 import TitlebarGridList from './components/Cards'
 import MyButton from './components/Footer'
 import TitlebarGridListChallenges from './components/Challenges'
@@ -41,7 +41,7 @@ class App extends Component {
         <Toolbar>
         <h1>Dashboard</h1>
         </Toolbar>
-        <Sales />
+        <MapChart />
         <Toolbar>
         <h1>My Courses</h1>
         <IconButton aria-label="Add">
