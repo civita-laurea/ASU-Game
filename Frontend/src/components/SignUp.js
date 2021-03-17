@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import Axios from 'axios';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -47,6 +49,41 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignUp() {
+  const [firstname, setFirstname] = useState('')
+  const [lastname, setLastname] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const history = useHistory();
+  function signup() {
+      Axios.post("http://localhost:9000/signup", {
+          firstname: firstname,
+          lastname: lastname,
+          email: email,
+          password: password
+      }).then((res) => {
+          if(res.data.message === "success"){
+            alert("user already registed")
+          }else{
+            console.log("=====111=====")
+            history.push('/')
+          }
+      }).catch(error =>{
+          console.log("server error" + error)
+      })
+  }
+  function handleEmail(e) {
+      setEmail(e.target.value)
+  }
+  function handlePassword(e) {
+      setPassword(e.target.value)
+  }
+  function handleFirstname(e) {
+    setFirstname(e.target.value)
+  }
+  function handleLastname(e) {
+    setLastname(e.target.value)
+  }
+
   const classes = useStyles();
 
   return (
@@ -63,6 +100,7 @@ export default function SignUp() {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
+              onChange={ handleFirstname }
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
@@ -75,6 +113,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={ handleLastname }
                 variant="outlined"
                 required
                 fullWidth
@@ -86,6 +125,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={ handleEmail }
                 variant="outlined"
                 required
                 fullWidth
@@ -97,6 +137,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={ handlePassword }
                 variant="outlined"
                 required
                 fullWidth
@@ -115,6 +156,7 @@ export default function SignUp() {
             </Grid>
           </Grid>
           <Button
+            onClick={signup}
             type="submit"
             fullWidth
             variant="contained"

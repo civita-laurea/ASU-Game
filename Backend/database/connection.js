@@ -1,3 +1,4 @@
+//this module is used to connect the mongodb
 const mongoose = require('mongoose')
 
 const connectDB = async() => {

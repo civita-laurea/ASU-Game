@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -66,8 +66,8 @@ export default function SignIn() {
                         'Content-type': 'application/json',
                         'Authorization': 'Bearer ' + res.data.result
                     }
-                }).then((res) =>{
-                    console.log(res)
+                }).then((response) =>{
+                    console.log(response)
                     history.push('/student')
                 }).catch(error => {
                     console.log(error)
