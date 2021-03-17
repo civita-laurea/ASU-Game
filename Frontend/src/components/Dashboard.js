@@ -7,6 +7,10 @@ import {
   Marker,
   Line
 } from "react-simple-maps";
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent'
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
@@ -24,6 +28,8 @@ const geoUrl =
 
 const MapChart = () => {
   return (
+    <Card>
+        <CardContent>
     <ComposableMap
     projectionConfig={{
         scale: 155,
@@ -72,6 +78,8 @@ const MapChart = () => {
         </Marker>
       ))}
     </ComposableMap>
+    </CardContent>
+    </Card>
   );
 };
 
