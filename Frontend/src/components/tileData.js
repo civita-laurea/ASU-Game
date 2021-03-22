@@ -15,15 +15,18 @@ const tileData = [
     {
     img: math,
     title: 'Math',
+    description: 'Mathematics involves Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
     img: statistics,
     title: 'Statistics',
     featured: true,
+    description: 'Statistics is Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
       img: econ,
       title: 'Economics',
+      description: 'Economics is Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
       img: geo,
@@ -38,7 +41,7 @@ const tileData = [
       title: 'Political Science',
       featured: true,
     },
-    {
+   {
       img: english,
       title: 'English',
     },

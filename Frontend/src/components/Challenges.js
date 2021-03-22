@@ -1,10 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import InfoIcon from '@material-ui/icons/Info';
 import IconButton from '@material-ui/core/IconButton';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import tileData from './tileData';
@@ -17,7 +13,6 @@ import Typography from '@material-ui/core/Typography';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
-import Toolbar from '@material-ui/core/Toolbar';
 
 function LinearProgressWithLabel(props) {
   return (
@@ -46,7 +41,6 @@ LinearProgressWithLabel.propTypes = {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    flex: 'wrap',
     justifyContent: 'space-around',
     overflowY: 'scroll',
     backgroundColor: theme.palette.background.paper,
@@ -77,12 +71,9 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 140,
   },
-  toolbarButtons: {
-    marginLeft: 'auto',
-  },
 }));
 
-export default function TitlebarGridList() {
+export default function TitlebarGridListChallenges() {
   const classes = useStyles();
   const [progress, setProgress] = React.useState(10);
 
@@ -98,7 +89,6 @@ export default function TitlebarGridList() {
 
   return (
 <div className={classes.root}>
- 
         <GridList className={classes.gridList} cellHeight={300} >
           {tileData.map((tile) => (
               <Card key={tile.img} className={classes.card}>
@@ -109,9 +99,8 @@ export default function TitlebarGridList() {
                       title={tile.title}
                   />
                   <CardContent>
-                    <Typography variant="h5" color="textPrimary" component="h5">{tile.title}</Typography>
-                    <Typography variant="body2" color="textSecondary" component="p" overflowY="scroll">
-                      {tile.description}
+                    <Typography variant="body2" color="textSecondary" component="p">
+                      {tile.title}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
