@@ -11,22 +11,21 @@ connDB()
 
 auth.route('/signup') 
     .post((req, res) => {
-    const firstrname = req.body.firstname
-    const lastname = req.body.lastname
-    const username = firstrname + ' ' + lastname
-    const email = req.body.email
-    const password = req.body.password
-    const role = 'studnet'
-    console.log(username + ", " + email + ", " + password + ", " + role + "\n" );
-    const user = new Userdb({
-        username: username,
-        email: email,
-        password: password,
-        role: role
+        const firstrname = req.body.firstname
+        const lastname = req.body.lastname
+        const username = firstrname + ' ' + lastname
+        const email = req.body.email
+        const password = req.body.password
+        const role = 'studnet'
+        console.log(username + ", " + email + ", " + password + ", " + role + "\n" );
+        const user = new Userdb({
+            username: username,
+            email: email,
+            password: password,
+            role: role
     })
 
-    user
-        .save(user)
+    user.save(user)
         .then(data => {
             console.log("server side saved!!!")
             res.json({ message: "success" })
