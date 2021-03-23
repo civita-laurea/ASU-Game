@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ComposableMap,
   Geographies,
@@ -71,6 +71,7 @@ const geoUrl =
 
 const MapChart = () => {
   const classes = useStyles();
+  const [count, setCount] = useState(0);
   return (
     <GridList className={classes.gridList} cellHeight={300} >
     <Card>
@@ -127,16 +128,9 @@ const MapChart = () => {
     </Card>
     <Card>
     <CardContent>
-    <h3>Pandemicator (The Terminator of Pandemic)</h3>
-    <p>You're the agent we've chosen among many to send back to the Past!</p>
-
-<p>They could not flatten the curves and lost a lot. They had the knowledge but didn't do it. It's hard to find out why they didn't save themselves. The least we can do is trying to correct it.
-Get the knowledge and training and act like it to save humanity from this dark pandemic.</p>
-
-
-<p>The system will be in contact with you through this old method that people used at the time, Emails. provide us with one so when you're finished, we can send you the reports</p>
+      <p>You clicked {count} times</p>
     <CardActions>
-      <IconButton aria-label = "Like">
+      <IconButton onClick={() => setCount(count + 1)} aria-label = "Next">
           <NavigateNextIcon className={classes.icon} />
       </IconButton>
     </CardActions>
