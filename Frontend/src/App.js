@@ -4,8 +4,13 @@ import SignIn from './components/SignIn'
 import Student from './components/Student'
 import SignUp from './components/SignUp'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import withFirebaseAuth from 'react-with-firebase-auth'
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import firebaseConfig from './firebaseConfig';
 
 class App extends Component {
+    
     render() {
         return (
             <Router>
@@ -19,14 +24,7 @@ class App extends Component {
       }
 }
 export default App;
-import withFirebaseAuth from 'react-with-firebase-auth'
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import firebaseConfig from './firebaseConfig';
-import Student from './components/Student';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-
+/*
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const firebaseAppAuth = firebaseApp.auth();
@@ -48,7 +46,7 @@ class App extends Component {
               {
                 user 
                   ? <Student />
-                  : <p>Please sign in.</p>
+                  : <SignIn />
               }
               {
                 user
@@ -63,4 +61,4 @@ class App extends Component {
 export default withFirebaseAuth({
   providers,
   firebaseAppAuth,
-})(App);
+})(App);*/

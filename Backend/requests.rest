@@ -9,3 +9,13 @@ Content-Type: application/json
     "email": "hongqi@gmail.com",
     "password": "1234"
 }
+###
+
+POST http://localhost:9000/add/course
+Content-Type: application/json
+
+{
+    "name": "test1",
+    "description": "this is a test!",
+    "image": "localhost:3000/img/hhh"
+}
