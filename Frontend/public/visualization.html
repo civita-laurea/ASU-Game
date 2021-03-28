@@ -13,25 +13,52 @@
     <div id="chart"></div>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
-        var options = {
-          series: [{
-          name: 'Series 1',
-          data: [80, 50, 30, 40, 100, 80],
-        }],
+         var options = {
+          series: 
+          [
+            {
+          name: 'Albert Einstein',
+          data: [80, 50, 30, 40, 100, 20],
+            }, 
+            {
+          name: 'Isaac Newton',
+          data: [20, 30, 40, 80, 20, 80],
+            }, 
+            {
+          name: 'Stephen Hawking',
+          data: [44, 76, 78, 13, 43, 10],
+            }
+          ],
           chart: {
-          height: 900,
+          height: 700,
           type: 'radar',
+          dropShadow: {
+            enabled: true,
+            blur: 1,
+            left: 1,
+            top: 1
+          }
         },
         title: {
-          text: 'Radar Chart'
+          text: 'Radar Chart - Multi Series'
+        },
+        stroke: {
+          width: 2
+        },
+        fill: {
+          opacity: 0.1
+        },
+        markers: {
+          size: 0
         },
         xaxis: {
-          categories: ['Engagement', '% students following the courses??', 'complete(content covered)', 'Clarity', 'variety of level-dificulities', 'useful']
+          categories: ['Engagement', '% students following the courses ??', 'complete (content covered)', 'Clarity', 'Variety of level-difficulties', 'Useful']
         }
         };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
+      
     </script>
   </body>
 </html>
