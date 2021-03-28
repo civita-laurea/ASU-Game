@@ -7,7 +7,7 @@ const auth = express.Router();
 const app = express()
 const connDB = require('../../database/connection')
 var Userdb = require('../../model/userSchema')
-connDB()
+const mongoose = require('mongoose')
 
 auth.route('/signup') 
     .post((req, res) => {
@@ -18,24 +18,26 @@ auth.route('/signup')
         const password = req.body.password
         const role = 'studnet'
         console.log(username + ", " + email + ", " + password + ", " + role + "\n" );
+        connDB()
         const user = new Userdb({
             username: username,
             email: email,
             password: password,
             role: role
-    })
-
-    user.save(user)
-        .then(data => {
-            console.log("server side saved!!!")
-            res.json({ message: "success" })
         })
-        .catch(err => {
-            res.status(500).send({
+
+        user.save(user)
+            .then(data => {
+                console.log("server side saved!!!")
+                res.json({ message: "success" })
+                mongoose.connection.close()
+            })
+            .catch(err => {
+                res.status(500).send({
                 message: err.message
             })
         })
-})
+    })
 
 auth.route('/student')
     .get(authenticationToken, (req, res) => {
@@ -46,6 +48,7 @@ auth.route('/login')
     .post((req, res) => {
         const userEmail = req.body.email
         const userPwd = req.body.password
+        connDB()
         Userdb.find({email: userEmail, password: userPwd}, function(err, obj){
             if(err){
                 console.log("error message: " + err)
@@ -63,12 +66,14 @@ auth.route('/login')
                 console.log("return the access token to client\n" + accessToken)
             }else{
                 console.log("incorrect username or password")
-                resjson({ result: null })
+                res.json({ result: null })
                 return
-        }
-    })
+            }
+        }).then(() => {
+            mongoose.connection.close()
+        })
 
-})
+    })
 // this method is used to verify the token
 function authenticationToken(req, res, next){
     const authHeader = req.headers['authorization']
