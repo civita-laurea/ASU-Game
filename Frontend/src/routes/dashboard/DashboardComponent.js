@@ -2,8 +2,8 @@ import React from 'react';
 import { Column, Row } from 'simple-flexbox';
 import { createUseStyles } from 'react-jss';
 import MiniCardComponent from 'components/cards/MiniCardComponent';
-import TodayTrendsComponent from './TodayTrendsComponent';
-import UnresolvedTicketsComponent from './UnresolvedTicketsComponent';
+import ChartComponent from './ChartComponent';
+import ImportantScheduleComponent from './ImportantScheduleComponent';
 import TasksComponent from './TasksComponent';
 
 const useStyles = createUseStyles({
@@ -25,13 +25,13 @@ const useStyles = createUseStyles({
             maxWidth: 'none'
         }
     },
-    todayTrends: {
+    radarChart: {
         marginTop: 30
     },
     lastRow: {
         marginTop: 30
     },
-    unresolvedTickets: {
+    importantSchedule: {
         marginRight: 30,
         '@media (max-width: 1024px)': {
             marginRight: 0
@@ -93,15 +93,15 @@ function DashboardComponent() {
                     />
                 </Row>
             </Row>
-            <div className={classes.todayTrends}>
-                <TodayTrendsComponent />
+            <div className={classes.radarChart}>
+                <ChartComponent />
             </div>
             <Row
                 horizontal='space-between'
                 className={classes.lastRow}
                 breakpoints={{ 1024: 'column' }}
             >
-                <UnresolvedTicketsComponent containerStyles={classes.unresolvedTickets} />
+                <ImportantScheduleComponent containerStyles={classes.importantSchedule} />
                 <TasksComponent containerStyles={classes.tasks} />
             </Row>
         </Column>

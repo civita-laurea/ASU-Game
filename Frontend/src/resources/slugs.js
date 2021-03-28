@@ -7,7 +7,7 @@ export default {
     coursesData: '/course/data',
     ratingAndComments: '/ratings',
     students: '/students',
-    posts: '/posts',
+    community: '/community',
     settings: '/settings',
     // auth
     login: '/login',

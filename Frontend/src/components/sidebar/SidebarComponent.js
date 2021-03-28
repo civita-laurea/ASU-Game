@@ -97,10 +97,10 @@ function SidebarComponent() {
                 onClick={() => onClick(SLUGS.students)}
             />
             <MenuItem
-                id={SLUGS.posts}
-                title='Posts'
+                id={SLUGS.community}
+                title='Community'
                 icon={IconArticles}
-                onClick={() => onClick(SLUGS.posts)}
+                onClick={() => onClick(SLUGS.community)}
             />
             <div className={classes.separator}></div>
             <MenuItem

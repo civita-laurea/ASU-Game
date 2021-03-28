@@ -83,8 +83,8 @@ function HeaderComponent() {
         case currentItem === SLUGS.students:
             title = 'Students';
             break;
-        case currentItem === SLUGS.posts:
-            title = 'Posts';
+        case currentItem === SLUGS.community:
+            title = 'Community';
             break;
         case currentItem === SLUGS.settings:
             title = 'Settings';
