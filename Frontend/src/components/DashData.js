@@ -16,17 +16,18 @@ const DashData = [
 
     {
         question: "This is the situation in the beginning. People didn't take it seriously. Governments were afraid of the economical collapse. They little knew that they may have lost the force behind the economy, PEOPLE!, When it became pandemic and went viral, humanity knew that science can be the savior.All of the scientists started to act on it. And they knew that understanding the data is the way to go.",
-        fromX: -74.006,
-        fromY: 40.7128,
-        toX: 2.3522,
-        toY: 48.8566,
-    },
-    {
-        question: "Find the solution and explain it through a universal language so everyone understands the world: THE MATHEMATICS.",
         fromX: 2.3522,
         fromY: 48.8566,
         toX: -58.3816,
         toY: -34.6037,
+        
+    },
+    {
+        question: "Find the solution and explain it through a universal language so everyone understands the world: THE MATHEMATICS.",
+        fromX: -74.006,
+        fromY: 40.7128,
+        toX: 2.3522,
+        toY: 48.8566,
     },   
     
     
