@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ComposableMap,
   Geographies,
@@ -8,13 +8,13 @@ import {
   Line
 } from "react-simple-maps";
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import IconButton from '@material-ui/core/IconButton';
 import CardActions from '@material-ui/core/CardActions';
 import GridList from '@material-ui/core/GridList';
 import CardContent from '@material-ui/core/CardContent';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import { makeStyles } from '@material-ui/core/styles';
+import DashData from './DashData';
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
@@ -71,6 +71,7 @@ const geoUrl =
 
 const MapChart = () => {
   const classes = useStyles();
+  const [count, setCount] = useState(0);
   return (
     <GridList className={classes.gridList} cellHeight={300} >
     <Card>
@@ -97,15 +98,8 @@ const MapChart = () => {
         }
       </Geographies>
       <Line
-        from={[2.3522, 48.8566]}
-        to={[-74.006, 40.7128]}
-        stroke="#FF5533"
-        strokeWidth={4}
-        strokeLinecap="round"
-      />
-      <Line
-        from={[2.3522, 48.8566]}
-        to={[-58.3816, -34.6037]}
+        from={[DashData[count].fromX, DashData[count].fromY]}
+        to={[DashData[count].toX, DashData[count].toY]}
         stroke="#FF5533"
         strokeWidth={4}
         strokeLinecap="round"
@@ -127,16 +121,9 @@ const MapChart = () => {
     </Card>
     <Card>
     <CardContent>
-    <h3>Pandemicator (The Terminator of Pandemic)</h3>
-    <p>You're the agent we've chosen among many to send back to the Past!</p>
-
-<p>They could not flatten the curves and lost a lot. They had the knowledge but didn't do it. It's hard to find out why they didn't save themselves. The least we can do is trying to correct it.
-Get the knowledge and training and act like it to save humanity from this dark pandemic.</p>
-
-
-<p>The system will be in contact with you through this old method that people used at the time, Emails. provide us with one so when you're finished, we can send you the reports</p>
+      <p>{DashData[count].question}</p>
     <CardActions>
-      <IconButton aria-label = "Like">
+      <IconButton onClick={() => setCount(count + 1)} aria-label = "Next">
           <NavigateNextIcon className={classes.icon} />
       </IconButton>
     </CardActions>

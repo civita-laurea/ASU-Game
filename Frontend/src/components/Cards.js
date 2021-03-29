@@ -17,7 +17,6 @@ import Typography from '@material-ui/core/Typography';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
-import Toolbar from '@material-ui/core/Toolbar';
 
 function LinearProgressWithLabel(props) {
   return (
