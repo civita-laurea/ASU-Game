@@ -80,15 +80,6 @@ export default function AddCourse() {
             color="primary"
             className={classes.submit}
           >
-            Cancelf
-          </Button>
-          <Button
-            onClick={addcourse}
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
             Add Course
           </Button>
           <Grid container>
