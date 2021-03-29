@@ -8,13 +8,13 @@ import {
   Line
 } from "react-simple-maps";
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import IconButton from '@material-ui/core/IconButton';
 import CardActions from '@material-ui/core/CardActions';
 import GridList from '@material-ui/core/GridList';
 import CardContent from '@material-ui/core/CardContent';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import { makeStyles } from '@material-ui/core/styles';
+import DashData from './DashData';
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
@@ -98,15 +98,8 @@ const MapChart = () => {
         }
       </Geographies>
       <Line
-        from={[2.3522, 48.8566]}
-        to={[-74.006, 40.7128]}
-        stroke="#FF5533"
-        strokeWidth={4}
-        strokeLinecap="round"
-      />
-      <Line
-        from={[2.3522, 48.8566]}
-        to={[-58.3816, -34.6037]}
+        from={[DashData[count].fromX, DashData[count].fromY]}
+        to={[DashData[count].toX, DashData[count].toY]}
         stroke="#FF5533"
         strokeWidth={4}
         strokeLinecap="round"
@@ -128,7 +121,7 @@ const MapChart = () => {
     </Card>
     <Card>
     <CardContent>
-      <p>You clicked {count} times</p>
+      <p>{DashData[count].question}</p>
     <CardActions>
       <IconButton onClick={() => setCount(count + 1)} aria-label = "Next">
           <NavigateNextIcon className={classes.icon} />
