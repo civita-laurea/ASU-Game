@@ -15,7 +15,7 @@ service.route('/add/course')
         const name = req.body.name
         const description = req.body.description
         const image = req.body.image
-        console.log(name + ", " + description + ", " + image + "\n" );
+        console.log(name + ", " + description + "\n" );
         const course = new Coursedb({
             name: name,
             description: description,
@@ -28,6 +28,7 @@ service.route('/add/course')
             res.json({ message: "success" })
         })
         .catch(err => {
+            console.log(err.message)
             res.status(500).send({
                 message: err.message
             })

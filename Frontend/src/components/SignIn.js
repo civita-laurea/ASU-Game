@@ -60,7 +60,14 @@ export default function SignIn() {
             if(res.data.result == null){
                 alert("incorrect email or password")
             }else{
-                console.log("...." + res.data.result)
+              /*****
+               * add the code here
+               * if result is not null,
+               * read the role
+               * if the role is student, then use the student url
+               * or use the professor url
+               */
+                console.log("=====> " + res.data.role)
                 Axios.get("http://localhost:9000/student", {
                     headers: {
                         'Content-type': 'application/json',

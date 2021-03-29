@@ -57,12 +57,11 @@ auth.route('/login')
                 //const randomToken = crypto.randomBytes(64).toString('hex')
                 //console.log("gennerate random 64 bytes token\n")
                 //console.log(randomToken)
-                const user = {  email: obj.email,
-                            role: obj.role
-                         }
+                console.log(obj[0].role)
+                const user = { email: obj[0].email, role: obj[0].role }
                 //const accessToken = jwt.sign(user, randomToken)
                 const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET) 
-                res.json({ result: accessToken })
+                res.json({ result: accessToken, role: obj[0].role })
                 console.log("return the access token to client\n" + accessToken)
             }else{
                 console.log("incorrect username or password")

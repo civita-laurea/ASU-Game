@@ -3,12 +3,12 @@ const mongoose = require('mongoose')
 var courseSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     }, 
     description: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     image: {
         type: String,
