@@ -15,6 +15,7 @@ import CardContent from '@material-ui/core/CardContent';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import { makeStyles } from '@material-ui/core/styles';
 import DashData from './DashData';
+import PropTypes from 'prop-types';
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
@@ -48,7 +49,7 @@ const geoUrl =
     card: {
       margin: 0,
       minWidth: 350,
-      
+
     },
     titleBar: {
       background:
@@ -69,6 +70,35 @@ const geoUrl =
     },
   }));
 
+function DrawLine(props){
+  const check = props.value;
+  const newData = DashData.slice(0, check);
+  return (
+      <>
+        { newData.map(function(item) {
+              return (<Line from={[item.fromX, item.fromY]}
+                            to={[item.toX, item.toY]}
+                            stroke="#FF5533"
+                            strokeWidth={4}
+                            strokeLinecap="round"
+                  />
+              );
+            }
+        )
+        }
+      </>
+  );
+
+}
+
+DrawLine.propTypes = {
+  /**
+   * The value of the progress indicator for the determinate and buffer variants.
+   * Value between 0 and 100.
+   */
+  value: PropTypes.number.isRequired,
+};
+
 const MapChart = () => {
   const classes = useStyles();
   const [count, setCount] = useState(0);
@@ -84,7 +114,7 @@ const MapChart = () => {
       width={800}
       height={400}
       padding={10}
-      style={{ width: "100%", height: "auto" }} 
+      style={{ width: "100%", height: "auto" }}
     >
       <Graticule stroke="#DDD" />
       <Geographies
@@ -97,13 +127,7 @@ const MapChart = () => {
           geographies.map(geo => <Geography key={geo.rsmKey} geography={geo} />)
         }
       </Geographies>
-      <Line
-        from={[DashData[count].fromX, DashData[count].fromY]}
-        to={[DashData[count].toX, DashData[count].toY]}
-        stroke="#FF5533"
-        strokeWidth={4}
-        strokeLinecap="round"
-      />
+      <DrawLine value = {count}/>
             {markers.map(({ name, coordinates, markerOffset }) => (
         <Marker key={name} coordinates={coordinates}>
           <circle r={5} fill="#F00" stroke="#fff" strokeWidth={2} />
