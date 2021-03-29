@@ -10,6 +10,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import AddCourse from './AddCourse'
+//import SignIn from './SignIn'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -59,10 +60,7 @@ class Student extends Component {
           onClick={() => this.setState({showCourseWindow:true})}>
             <AddIcon />
         </IconButton>
-        <div>
-          {this.state.showCourseWindow ? <AddCourse /> : null}
-        </div>
-        
+        {this.state.showCourseWindow ? <AddCourse /> : null}
         </Toolbar>
         <TitlebarGridList />
         <Toolbar>
