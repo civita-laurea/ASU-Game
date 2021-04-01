@@ -1,7 +1,6 @@
 import React from 'react';
 import { Column, Row } from 'simple-flexbox';
 import { createUseStyles } from 'react-jss';
-import MiniCardComponent from 'components/cards/MiniCardComponent';
 import CommunityComponent from './CommunityComponent';
 
 const useStyles = createUseStyles({

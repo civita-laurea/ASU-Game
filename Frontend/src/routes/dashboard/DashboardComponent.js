@@ -83,12 +83,12 @@ function DashboardComponent() {
                 >
                     <MiniCardComponent
                         className={classes.miniCardContainer}
-                        title='Upcomming'
+                        title='Upcoming'
                         value='3'
                     />
                     <MiniCardComponent
                         className={classes.miniCardContainer}
-                        title='On hold'
+                        title='On Hold'
                         value='4'
                     />
                 </Row>
