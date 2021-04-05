@@ -5,6 +5,7 @@ const DashData = [
         fromY: 48.8566,
         toX: -74.006,
         toY: 40.7128,
+        stroke: "#00ff00",
     },
     {
         question: "Living in fear of any kind of near-human contact. Because when we could get rid of it by staying away, we didn't. That's why not doing the simple physical distancing practice, has made us practice social isolation like everyone else is a threat to our life.",
@@ -12,6 +13,7 @@ const DashData = [
         fromY: 40.7128,
         toX: -58.3816,
         toY: -34.6037,
+        stroke: "#FF5533",
         },
 
     {
@@ -20,6 +22,7 @@ const DashData = [
         fromY: 48.8566,
         toX: -58.3816,
         toY: -34.6037,
+        stroke: "#FF5533",
         
     },
     {
@@ -28,6 +31,7 @@ const DashData = [
         fromY: 40.7128,
         toX: 2.3522,
         toY: 48.8566,
+        stroke: "#FF5533",
     },   
     
     

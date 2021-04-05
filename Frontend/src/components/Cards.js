@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
+import AddIcon from '@material-ui/icons/Add';
 
 function LinearProgressWithLabel(props) {
   return (
@@ -118,6 +119,9 @@ export default function TitlebarGridList() {
                   <div className={classes.bar}>
                     <LinearProgressWithLabel value={progress} />
                   </div>
+                  <IconButton aria-label = "More">
+                    <AddIcon className={classes.icon} />
+                  </IconButton>
                 </CardActions>
               </Card>
 
