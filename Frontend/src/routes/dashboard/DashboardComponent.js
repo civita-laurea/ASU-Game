@@ -66,7 +66,7 @@ function DashboardComponent() {
                     <MiniCardComponent
                         className={classes.miniCardContainer}
                         title='Unresolved'
-                        value='6'
+                        value='3'
                     />
                     <MiniCardComponent
                         className={classes.miniCardContainer}
@@ -84,12 +84,12 @@ function DashboardComponent() {
                     <MiniCardComponent
                         className={classes.miniCardContainer}
                         title='Upcoming'
-                        value='3'
+                        value='2'
                     />
                     <MiniCardComponent
                         className={classes.miniCardContainer}
                         title='On Hold'
-                        value='4'
+                        value='1'
                     />
                 </Row>
             </Row>

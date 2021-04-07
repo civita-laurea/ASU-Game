@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import RadarChart from "react-apexcharts";
 import { Row } from "simple-flexbox";
 import { createUseStyles } from 'react-jss';
+import DashboardData from './DashboardData';
 
 const useStyles = createUseStyles({
   lastRow: {
@@ -21,7 +22,9 @@ const useStyles = createUseStyles({
   }
 });
 
+
 class ChartComponent extends Component {
+  
   constructor(props) {
     super(props);
 
@@ -79,8 +82,8 @@ class ChartComponent extends Component {
       },
       seriesRadar: [
         {
-          name: "Series 1",
-          data: [20, 100, 40, 30, 50, 80]
+          name: "Average",
+          data: [73.33, 36.67, 60, 36.67, 53.33, 70]
         }
       ],
       optionsMultiSeries: {
@@ -111,21 +114,21 @@ class ChartComponent extends Component {
           }
         },
         xaxis: {
-          categories: ['Engagement', '% students following the courses ??', 'complete (content covered)', 'Clarity', 'Variety of level-difficulties', 'Useful']
+          categories: ['Useful', 'Engagement', '% students following the courses ??', 'Complete (content covered)', 'Clarity', 'Variety of level-difficulties']
         }
       },
       seriesMultiSeries: [
         {
-          name: 'Course 1',
-          data: [80, 50, 30, 40, 100, 20],
+          name: DashboardData[0].name,
+          data: [DashboardData[0].useful, DashboardData[0].engagement, DashboardData[0].studentFollowed, DashboardData[0].complete, DashboardData[0].clarity, DashboardData[0].difficulty],
         }, 
         {
-          name: 'Course 2',
-          data: [20, 30, 40, 80, 20, 80],
+          name: DashboardData[1].name,
+          data: [DashboardData[1].useful, DashboardData[1].engagement, DashboardData[1].studentFollowed, DashboardData[1].complete, DashboardData[1].clarity, DashboardData[1].difficulty],
         }, 
         {
-          name: 'Course 3',
-          data: [44, 76, 78, 13, 43, 10],
+          name: DashboardData[2].name,
+          data: [DashboardData[2].useful, DashboardData[2].engagement, DashboardData[2].studentFollowed, DashboardData[2].complete, DashboardData[2].clarity, DashboardData[2].difficulty],
         }  
       ]
     };
