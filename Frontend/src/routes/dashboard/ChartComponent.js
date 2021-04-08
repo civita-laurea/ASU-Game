@@ -22,6 +22,30 @@ const useStyles = createUseStyles({
   }
 });
 
+function calcUseful(upvoteRate) {
+  return upvoteRate;
+}
+
+function calcEngagement(absentRate) {
+  return (100 - absentRate);
+}
+
+function calcStudentFollowed(lateHomework) {
+  return (100 - lateHomework);
+}
+
+function calcClarity(upvoteRate, absentRate) {
+  return (upvoteRate / 100 * (100 - absentRate));
+}
+
+function calcDifficulty(quiz, homework, exam) {
+  return ((100 - (quiz + homework + exam) / 3) * 2);
+}
+
+function calcAverage(val1, val2, val3) {
+  var num = (val1 + val2 + val3) / 3; 
+  return (Math.round(num * 100) / 100).toFixed(2);
+}
 
 class ChartComponent extends Component {
   
@@ -83,7 +107,11 @@ class ChartComponent extends Component {
       seriesRadar: [
         {
           name: "Average",
-          data: [73.33, 36.67, 60, 36.67, 53.33, 70]
+          data: [calcAverage(calcUseful(DashboardData[0].upvoteRate), calcUseful(DashboardData[1].upvoteRate), calcUseful(DashboardData[2].upvoteRate)), 
+          calcAverage(calcEngagement(DashboardData[0].absentRate), calcEngagement(DashboardData[1].absentRate), calcEngagement(DashboardData[2].absentRate)), 
+          calcAverage(calcStudentFollowed(DashboardData[0].lateHomework), calcStudentFollowed(DashboardData[1].lateHomework), calcStudentFollowed(DashboardData[2].lateHomework)), 
+          calcAverage(35, 50, 20), calcAverage(calcClarity(DashboardData[0].upvoteRate, DashboardData[0].absentRate), calcClarity(DashboardData[1].upvoteRate, DashboardData[1].absentRate), calcClarity(DashboardData[2].upvoteRate, DashboardData[2].absentRate)), 
+          calcAverage(calcDifficulty(DashboardData[0].quiz, DashboardData[0].homework, DashboardData[0].exam), calcDifficulty(DashboardData[1].quiz, DashboardData[1].homework, DashboardData[1].exam), calcDifficulty(DashboardData[2].quiz, DashboardData[2].homework, DashboardData[2].exam))]
         }
       ],
       optionsMultiSeries: {
@@ -99,6 +127,7 @@ class ChartComponent extends Component {
         title: {
           text: 'Radar Chart - Multi Series'
         },
+        
         stroke: {
           width: 2
         },
@@ -106,7 +135,7 @@ class ChartComponent extends Component {
           opacity: 0.1
         },
         markers: {
-          size: 0
+          size: 4
         },
         plotOptions: {
           radar: {
@@ -120,15 +149,21 @@ class ChartComponent extends Component {
       seriesMultiSeries: [
         {
           name: DashboardData[0].name,
-          data: [DashboardData[0].useful, DashboardData[0].engagement, DashboardData[0].studentFollowed, DashboardData[0].complete, DashboardData[0].clarity, DashboardData[0].difficulty],
+          data: [calcUseful(DashboardData[0].upvoteRate), calcEngagement(DashboardData[0].absentRate), calcStudentFollowed(DashboardData[0].lateHomework), 35, 
+          calcClarity(DashboardData[0].upvoteRate, DashboardData[0].absentRate), 
+          calcDifficulty(DashboardData[0].quiz, DashboardData[0].homework, DashboardData[0].exam)],
         }, 
         {
           name: DashboardData[1].name,
-          data: [DashboardData[1].useful, DashboardData[1].engagement, DashboardData[1].studentFollowed, DashboardData[1].complete, DashboardData[1].clarity, DashboardData[1].difficulty],
+          data: [calcUseful(DashboardData[1].upvoteRate), calcEngagement(DashboardData[1].absentRate), calcStudentFollowed(DashboardData[1].lateHomework), 50, 
+          calcClarity(DashboardData[1].upvoteRate, DashboardData[1].absentRate), 
+          calcDifficulty(DashboardData[1].quiz, DashboardData[1].homework, DashboardData[1].exam)],
         }, 
         {
           name: DashboardData[2].name,
-          data: [DashboardData[2].useful, DashboardData[2].engagement, DashboardData[2].studentFollowed, DashboardData[2].complete, DashboardData[2].clarity, DashboardData[2].difficulty],
+          data: [calcUseful(DashboardData[2].upvoteRate), calcEngagement(DashboardData[2].absentRate), calcStudentFollowed(DashboardData[2].lateHomework), 20, 
+          calcClarity(DashboardData[2].upvoteRate, DashboardData[2].absentRate), 
+          calcDifficulty(DashboardData[2].quiz, DashboardData[2].homework, DashboardData[2].exam)],
         }  
       ]
     };
