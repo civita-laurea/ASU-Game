@@ -7,6 +7,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import EmojiEventsTwoToneIcon from '@material-ui/icons/EmojiEventsTwoTone';
 import logo from '../images/cropped-Logo-CivitaLaurea.png';
 
 
@@ -80,6 +81,15 @@ export default function ButtonAppBar() {
           <Button color="inherit">Community</Button>
           <Button color="inherit">Current Activities</Button>
           <Button color="inherit">Courses and Challenges</Button>
+          <div style={{
+                display: 'flex',
+                alignItems: 'right',
+                marginLeft: 'auto',
+                flexWrap: 'wrap',
+            }}>
+                <EmojiEventsTwoToneIcon />
+                <span>revolve</span>
+          </div> 
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
