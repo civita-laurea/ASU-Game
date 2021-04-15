@@ -147,49 +147,103 @@ const quiz13 = new Quiz({
 // add quiz APP on professor side
 
 
-// Quiz.insertMany([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13], function(err){
+Quiz.insertMany([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13], function(err){
+    if (err){
+        console.log(err);
+    } else {
+            // close monogoose connection
+            mongoose.connection.close();
+
+        console.log("Succesfully add quiz on quizDB");
+    }
+});
+
+
+
+// show quiz API on professor side
+
+// Quiz.find(function(err, quizzes){
 //     if (err){
 //         console.log(err);
 //     } else {
-//             // close monogoose connection
-//             mongoose.connection.close();
+        
+//         // close monogoose connection
+//         mongoose.connection.close();
 
-//         console.log("Succesfully add quiz on quizDB");
+//         // run all the quizDB
+//         console.log(quizzes)
 //     }
 // });
 
 
-// get quiz API on student side
 
-Quiz.find(function(err, quizzes){
-    if (err){
-        console.log(err);
-    } else {
-        
-        // close monogoose connection
-        mongoose.connection.close();
+// // get quiz API on student side
 
-        // run all the quizDB
-        // console.log(quizzes);
+// Quiz.find(function(err, quizzes){
+//     if (err){
+//         console.log(err);
+//     } else {
         
-        // run forEach to loop through the detail as the user needed
-        quizzes.forEach(function(quiz){
+//         // close monogoose connection
+//         mongoose.connection.close();
+        
+//         // run forEach to loop through the detail as the user needed
+//         quizzes.forEach(function(quiz){
             
-            // for professor or student for question and option 1 to 4
-            console.log(quiz._id);
-            console.log(quiz.question);
-            console.log(quiz.option1);
-            console.log(quiz.option2);
-            console.log(quiz.option3);
-            console.log(quiz.option4);
-            console.log();
+//             // for professor or student for question and option 1 to 4
+//             console.log(quiz._id);
+//             console.log(quiz.question);
+//             console.log(quiz.option1);
+//             console.log(quiz.option2);
+//             console.log(quiz.option3);
+//             console.log(quiz.option4);
+//             console.log();
 
-            // for professor or student for id and answer
+//             // for professor or student for id and answer
 
-            // console.log(quiz._id);
-            // console.log(quiz.answer);
-            // console.log();
-        })
+//             // console.log(quiz._id);
+//             // console.log(quiz.answer);
+//             // console.log();
+//         })
 
-    }
-});
+//     }
+// });
+
+
+
+// // show quiz answer API on Professor/Student side
+
+// Quiz.find(function(err, quizzes){
+//     if (err){
+//         console.log(err);
+//     } else {
+        
+//         // close monogoose connection
+//         mongoose.connection.close();
+        
+//         // run forEach to loop through the detail as the user needed
+//         quizzes.forEach(function(quiz){
+            
+//             // for professor or student for id and answer
+
+//             console.log(quiz._id);
+//             console.log(quiz.answer);
+//             console.log();
+//         })
+//     }
+// });
+
+
+// Delete database 
+
+// Quiz.deleteMany({_id: {$gte: 1}}, function(err){
+//     if (err){
+//         console.log(err);
+//     } else {
+        
+//         // close monogoose connection
+//         mongoose.connection.close();
+        
+//         console.log("Successfully delete all the documents");
+//     }    
+// });
