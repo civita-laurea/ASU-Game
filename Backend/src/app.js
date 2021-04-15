@@ -151,8 +151,8 @@ Quiz.insertMany([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, 
     if (err){
         console.log(err);
     } else {
-            // close monogoose connection
-            mongoose.connection.close();
+        // close monogoose connection
+        mongoose.connection.close();
 
         console.log("Succesfully add quiz on quizDB");
     }
