@@ -2,18 +2,18 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/quizDB', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const quizSchema = new mongoose.Schema({
-    _id: Number,
-    question: String,
-    option1: String,
-    option2: String,
-    option3: String,
-    option4: String,
-    answer: String
+    _id: { type: Number, required: [true, 'need an ID number' ]},
+    question: { type: String, required: [true, 'need enter a String'] },
+    option1: { type: String, required: [true, 'need enter a String'] },
+    option2: { type: String, required: [true, 'need enter a String'] },
+    option3: { type: String, required: [true, 'need enter a String'] },
+    option4: { type: String, required: [true, 'need enter a String'] },
+    answer: { type: String, required: [true, 'need enter a String'] }
 });
 
 const Quiz = mongoose.model("Quiz", quizSchema);
 
-const quiz = new Quiz({
+const quiz1 = new Quiz({
     _id: 1,
     question: "My ones digit is 4, my tens digit is 8. What number am I?",
     option1: "48",
@@ -144,10 +144,52 @@ const quiz13 = new Quiz({
     answer: "4 weeks"
 });
 
-Quiz.insertMany([quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13], function(err){
+// add quiz APP on professor side
+
+
+// Quiz.insertMany([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13], function(err){
+//     if (err){
+//         console.log(err);
+//     } else {
+//             // close monogoose connection
+//             mongoose.connection.close();
+
+//         console.log("Succesfully add quiz on quizDB");
+//     }
+// });
+
+
+// get quiz API on student side
+
+Quiz.find(function(err, quizzes){
     if (err){
         console.log(err);
     } else {
-        console.log("Succesfully add quiz on quizDB");
+        
+        // close monogoose connection
+        mongoose.connection.close();
+
+        // run all the quizDB
+        // console.log(quizzes);
+        
+        // run forEach to loop through the detail as the user needed
+        quizzes.forEach(function(quiz){
+            
+            // for professor or student for question and option 1 to 4
+            console.log(quiz._id);
+            console.log(quiz.question);
+            console.log(quiz.option1);
+            console.log(quiz.option2);
+            console.log(quiz.option3);
+            console.log(quiz.option4);
+            console.log();
+
+            // for professor or student for id and answer
+
+            // console.log(quiz._id);
+            // console.log(quiz.answer);
+            // console.log();
+        })
+
     }
 });
