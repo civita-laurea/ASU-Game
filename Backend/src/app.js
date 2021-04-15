@@ -147,16 +147,16 @@ const quiz13 = new Quiz({
 // add quiz APP on professor side
 
 
-Quiz.insertMany([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13], function(err){
-    if (err){
-        console.log(err);
-    } else {
-            // close monogoose connection
-            mongoose.connection.close();
+// Quiz.insertMany([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13], function(err){
+//     if (err){
+//         console.log(err);
+//     } else {
+//             // close monogoose connection
+//             mongoose.connection.close();
 
-        console.log("Succesfully add quiz on quizDB");
-    }
-});
+//         console.log("Succesfully add quiz on quizDB");
+//     }
+// });
 
 
 
@@ -179,35 +179,35 @@ Quiz.insertMany([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, 
 
 // // get quiz API on student side
 
-// Quiz.find(function(err, quizzes){
-//     if (err){
-//         console.log(err);
-//     } else {
+Quiz.find(function(err, quizzes){
+    if (err){
+        console.log(err);
+    } else {
         
-//         // close monogoose connection
-//         mongoose.connection.close();
+        // close monogoose connection
+        mongoose.connection.close();
         
-//         // run forEach to loop through the detail as the user needed
-//         quizzes.forEach(function(quiz){
+        // run forEach to loop through the detail as the user needed
+        quizzes.forEach(function(quiz){
             
-//             // for professor or student for question and option 1 to 4
-//             console.log(quiz._id);
-//             console.log(quiz.question);
-//             console.log(quiz.option1);
-//             console.log(quiz.option2);
-//             console.log(quiz.option3);
-//             console.log(quiz.option4);
-//             console.log();
+            // for professor or student for question and option 1 to 4
+            console.log(quiz._id);
+            console.log(quiz.question);
+            console.log(quiz.option1);
+            console.log(quiz.option2);
+            console.log(quiz.option3);
+            console.log(quiz.option4);
+            console.log();
 
-//             // for professor or student for id and answer
+            // for professor or student for id and answer
 
-//             // console.log(quiz._id);
-//             // console.log(quiz.answer);
-//             // console.log();
-//         })
+            // console.log(quiz._id);
+            // console.log(quiz.answer);
+            // console.log();
+        })
 
-//     }
-// });
+    }
+});
 
 
 
