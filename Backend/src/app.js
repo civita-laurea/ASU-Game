@@ -147,33 +147,33 @@ const quiz13 = new Quiz({
 // add quiz APP on professor side
 
 
-Quiz.insertMany([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13], function(err){
-    if (err){
-        console.log(err);
-    } else {
-        // close monogoose connection
-        mongoose.connection.close();
+// Quiz.insertMany([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13], function(err){
+//     if (err){
+//         console.log(err);
+//     } else {
+//         // close monogoose connection
+//         mongoose.connection.close();
 
-        console.log("Succesfully add quiz on quizDB");
-    }
-});
+//         console.log("Succesfully add quiz on quizDB");
+//     }
+// });
 
 
 
 // show quiz API on professor side
 
-// Quiz.find(function(err, quizzes){
-//     if (err){
-//         console.log(err);
-//     } else {
+Quiz.find(function(err, quizzes){
+    if (err){
+        console.log(err);
+    } else {
         
-//         // close monogoose connection
-//         mongoose.connection.close();
+        // close monogoose connection
+        mongoose.connection.close();
 
-//         // run all the quizDB
-//         console.log(quizzes)
-//     }
-// });
+        // run all the quizDB
+        console.log(quizzes)
+    }
+});
 
 
 
