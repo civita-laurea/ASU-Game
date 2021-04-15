@@ -13,5 +13,6 @@
     "mongoose": "^5.12.3"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "",
+  "type": "module"
 }
