@@ -1,7 +1,7 @@
 //jshint esversion:6
 
 // import {quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13} from './quizData.mjs';
-import quizData from "./quizData"
+// import quizData from "./quizData"
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/quizDB', {useNewUrlParser: true, useUnifiedTopology: true});
@@ -18,17 +18,19 @@ const quizSchema = new mongoose.Schema({
 
 const Quiz = mongoose.model("Quiz", quizSchema);
 
-// const quiz1 = new Quiz({
-//     _id: 1,
-//     question: "My ones digit is 4, my tens digit is 8. What number am I?",
-//     option1: "48",
-//     option2: "8",
-//     option3: "84",
-//     option4: "4",
-//     answer: "84"
-// });
+const quiz1 = new Quiz({
+    _id: 1,
+    question: "My ones digit is 4, my tens digit is 8. What number am I?",
+    option1: "48",
+    option2: "8",
+    option3: "84",
+    option4: "4",
+    answer: "84"
+});
 
-// // quiz.save();
+// quiz1.save();
+
+
 // const quiz2 = new Quiz({
 //     _id: 2,
 //     question: "Eric has 11 balloons and Ernie has 8 balloons. How many balloons do they have altogether?",
@@ -152,17 +154,30 @@ const Quiz = mongoose.model("Quiz", quizSchema);
 // add quiz APP on professor side
 
 
-Quiz.insertMany([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13], function(err){
-    if (err){
-        console.log(err);
-    } else {
-        // close monogoose connection
-        mongoose.connection.close();
+// Quiz.insertMany([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13], function(err){
+//     if (err){
+//         console.log(err);
+//     } else {
+//         // close monogoose connection
+//         mongoose.connection.close();
 
-        console.log("Succesfully add quiz on quizDB");
-    }
-});
+//         console.log("Succesfully add quiz on quizDB");
+//     }
+// });
 
+
+//add only one object
+
+// Quiz.insertMany([quiz1], function(err){
+//     if (err){
+//         console.log(err);
+//     } else {
+//         // close monogoose connection
+//         mongoose.connection.close();
+
+//         console.log("Succesfully add quiz on quizDB");
+//     }
+// });
 
 
 // show quiz API on professor side
