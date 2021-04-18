@@ -88,7 +88,7 @@ export default function ButtonAppBar() {
                 flexWrap: 'wrap',
             }}>
                 <EmojiEventsTwoToneIcon />
-                <span>revolve</span>
+                <span>144 points</span>
           </div> 
           <div className={classes.search}>
             <div className={classes.searchIcon}>
