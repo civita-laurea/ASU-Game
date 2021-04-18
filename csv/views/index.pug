@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  br
+  h1 Welcome to Civita Laurea.
+  h2 Please import Quizbank CSV file
+  br
+  p
+   a(href='javascript:void(0)' class='btn btn-primary btn-lg' id='importdata') Import CSV 
+   | &nbsp;&nbsp;&nbsp;
+   a(href='javascript:void(0)' class='btn btn-primary btn-lg' id='fetchdata') Fetch Data
+  br  
+  p#message.alert.alert-success(style='display:none')
+  br
+  table.table.table-bordered
+    thead
+        tr
+            th #
+            
+            th Question
+            th Option1
+            th Option2
+            th Option3
+            th Option4
+    tbody#trdata
+        tr
+            td(colspan='3') Click on <strong>Import CSV</strong> button to import and save data to MongoDB. <br />Click on <strong>Fetch Data</strong> button to display data from database
