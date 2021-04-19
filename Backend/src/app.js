@@ -179,35 +179,35 @@ const quiz13 = new Quiz({
 
 // // get quiz API on student side
 
-Quiz.find(function(err, quizzes){
-    if (err){
-        console.log(err);
-    } else {
+// Quiz.find(function(err, quizzes){
+//     if (err){
+//         console.log(err);
+//     } else {
         
-        // close monogoose connection
-        mongoose.connection.close();
+//         // close monogoose connection
+//         mongoose.connection.close();
         
-        // run forEach to loop through the detail as the user needed
-        quizzes.forEach(function(quiz){
+//         // run forEach to loop through the detail as the user needed
+//         quizzes.forEach(function(quiz){
             
-            // for professor or student for question and option 1 to 4
-            console.log(quiz._id);
-            console.log(quiz.question);
-            console.log(quiz.option1);
-            console.log(quiz.option2);
-            console.log(quiz.option3);
-            console.log(quiz.option4);
-            console.log();
+//             // for professor or student for question and option 1 to 4
+//             console.log(quiz._id);
+//             console.log(quiz.question);
+//             console.log(quiz.option1);
+//             console.log(quiz.option2);
+//             console.log(quiz.option3);
+//             console.log(quiz.option4);
+//             console.log();
 
-            // for professor or student for id and answer
+//             // for professor or student for id and answer
 
-            // console.log(quiz._id);
-            // console.log(quiz.answer);
-            // console.log();
-        })
+//             // console.log(quiz._id);
+//             // console.log(quiz.answer);
+//             // console.log();
+//         })
 
-    }
-});
+//     }
+// });
 
 
 
@@ -236,14 +236,14 @@ Quiz.find(function(err, quizzes){
 
 // Delete database 
 
-// Quiz.deleteMany({_id: {$gte: 1}}, function(err){
-//     if (err){
-//         console.log(err);
-//     } else {
+Quiz.deleteMany({_id: {$gte: 1}}, function(err){
+    if (err){
+        console.log(err);
+    } else {
         
-//         // close monogoose connection
-//         mongoose.connection.close();
+        // close monogoose connection
+        mongoose.connection.close();
         
-//         console.log("Successfully delete all the documents");
-//     }    
-// });
+        console.log("Successfully delete all the documents");
+    }    
+});
