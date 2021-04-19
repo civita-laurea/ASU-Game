@@ -8,7 +8,7 @@ const app = express()
 const connDB = require('../../database/connection')
 var Userdb = require('../../model/userSchema')
 const mongoose = require('mongoose')
-
+connDB()
 auth.route('/signup') 
     .post((req, res) => {
         const firstrname = req.body.firstname
@@ -18,7 +18,6 @@ auth.route('/signup')
         const password = req.body.password
         const role = 'studnet'
         console.log(username + ", " + email + ", " + password + ", " + role + "\n" );
-        connDB()
         const user = new Userdb({
             username: username,
             email: email,
@@ -30,7 +29,7 @@ auth.route('/signup')
             .then(data => {
                 console.log("server side saved!!!")
                 res.json({ message: "success" })
-                mongoose.connection.close()
+                //mongoose.connection.close()
             })
             .catch(err => {
                 res.status(500).send({
@@ -48,7 +47,7 @@ auth.route('/login')
     .post((req, res) => {
         const userEmail = req.body.email
         const userPwd = req.body.password
-        connDB()
+        //connDB()
         Userdb.find({email: userEmail, password: userPwd}, function(err, obj){
             if(err){
                 console.log("error message: " + err)
@@ -69,7 +68,7 @@ auth.route('/login')
                 return
             }
         }).then(() => {
-            mongoose.connection.close()
+            //mongoose.connection.close()
         })
 
     })

@@ -7,6 +7,7 @@ const service = express.Router();
 const app = express()
 const connDB = require('../../database/connection')
 var Coursedb = require('../../model/courseSchema')
+var Quizdb = require('../../model/quizSchema')
 
 connDB()
 
@@ -50,6 +51,29 @@ service.route('/get/courses')
         })
     })
 
+    service.route('/add/quiz')
+    .post((req, res) => {
+        const name = req.body.name
+        const description = req.body.description
+        const image = req.body.image
+        console.log(name + ", " + description + "\n" );
+        const course = new Coursedb({
+            name: name,
+            description: description,
+            image: image
+    })
 
+    course.save(course)
+        .then(data => {
+            console.log("server side saved!!!")
+            res.json({ message: "success" })
+        })
+        .catch(err => {
+            console.log(err.message)
+            res.status(500).send({
+                message: err.message
+            })
+        })
+})
 
 module.exports = service
