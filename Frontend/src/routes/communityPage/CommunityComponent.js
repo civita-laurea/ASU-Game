@@ -8,7 +8,7 @@ function createEntry(communityTerm) {
   return (
     <Entry
       key={communityTerm.id}
-      // emoji={communityTerm.emoji}
+      
       name={communityTerm.name}
       description={communityTerm.meaning}
     />
