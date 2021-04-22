@@ -91,10 +91,10 @@ function SidebarComponent() {
                 />
             </MenuItem>
             <MenuItem
-                id={SLUGS.students}
-                title='Students'
-                icon={IconAgents}
-                onClick={() => onClick(SLUGS.students)}
+                id={SLUGS.quizzes}
+                title='Quiz Upload'
+                icon={IconArticles}
+                onClick={() => onClick(SLUGS.quizzes)}
             />
             <MenuItem
                 id={SLUGS.community}

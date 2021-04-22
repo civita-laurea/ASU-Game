@@ -104,6 +104,8 @@ function DashboardComponent() {
                 <ImportantScheduleComponent containerStyles={classes.importantSchedule} />
                 <TasksComponent containerStyles={classes.tasks} />
             </Row>
+            <div>
+            </div>
         </Column>
     );
 }

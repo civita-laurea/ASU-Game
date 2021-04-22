@@ -5,6 +5,7 @@ import LoadingComponent from 'components/loading';
 
 const DashboardComponent = lazy(() => import('./dashboard'));
 const CommunityComponent = lazy(() => import('./communityPage'))
+const QuizComponent = lazy(() => import('./quizPage'))
 
 function PrivateRoutes() {
     return (
@@ -16,7 +17,7 @@ function PrivateRoutes() {
                 <Route exact path={SLUGS.courses} render={() => <div>courses list</div>} />
                 <Route exact path={SLUGS.coursesWork} render={() => <div>courses assignments</div>} />
                 <Route exact path={SLUGS.coursesData} render={() => <div>courses data overview</div>} />
-                <Route exact path={SLUGS.students} render={() => <div>students</div>} />
+                <Route exact path={SLUGS.quizzes} component={QuizComponent} />
                 <Route exact path={SLUGS.community} component={CommunityComponent} />
                 <Route exact path={SLUGS.settings} render={() => <div>settings</div>} />
                 <Redirect to={SLUGS.dashboard} />

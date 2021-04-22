@@ -6,7 +6,7 @@ export default {
     coursesWork: '/courses/work',
     coursesData: '/course/data',
     ratingAndComments: '/ratings',
-    students: '/students',
+    quizzes: '/quizpage',
     community: '/community',
     settings: '/settings',
     // auth
