@@ -30,9 +30,15 @@ Public-facing name :project-386357350483
 
 # How to Run:
 $ cd Backend
+
 $ npm install
+
 $ nodemon index.js
 
+
+
 $ cd Frontend
+
 $ npm install
+
 $ npm start
