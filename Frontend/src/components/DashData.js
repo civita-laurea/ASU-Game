@@ -1,6 +1,6 @@
 const DashData = [
     {
-        question: "You're the agent we've chosen among many to send back to the Past! They could not flatten the curves and lost a lot. They had the knowledge but didn't do it. It's hard to find out why they didn't save themselves. The least we can do is trying to correct it. Get the knowledge and training and act like it to save humanity from this dark pandemic. Find the solution ... We don't expect it to be easy but you can do it. The system will be in contact with you through this old method that people used at the time, Emails. provide us with one so when you're finished, we can send you the reports with lots of data!",
+        question: "Congrats! You're the agent that we've chosen among many to send back to the Past! The scientists back then had the knowledge but could not flatten the infection growth curves. A lot of lives were lost. We still don't know why they couldn't save themselves. The system will be in contact with you through this  method that people used at the time. Come back when you're finished with reports having lots of data! You will start in Paris and move to the next city with every correct answer. For every wrong answer, you will have to retreat to Lima. Good Luck!",
         fromX: 2.3522,
         fromY: 48.8566,
         toX: -74.006,
