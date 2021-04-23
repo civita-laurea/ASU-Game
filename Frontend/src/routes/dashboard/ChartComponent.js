@@ -89,7 +89,7 @@ class ChartComponent extends Component {
           }
         },
         xaxis: {
-            categories: ['Useful', 'Engagement', '% students following the courses ??', 'Complete (content covered)', 'Clarity', 'Variety of level-dificulties']
+            categories: ['Effectiveness', 'Engagement', 'No. of students following the courses', 'Completeness (content covered)', 'Clarity', 'Variety of level-dificulties']
         },
         yaxis: {
           tickAmount: 6,
@@ -143,7 +143,7 @@ class ChartComponent extends Component {
           }
         },
         xaxis: {
-          categories: ['Useful', 'Engagement', '% students following the courses ??', 'Complete (content covered)', 'Clarity', 'Variety of level-difficulties']
+          categories: ['Effectiveness', 'Engagement', 'No. of students following the courses', 'Completeness (content covered)', 'Clarity', 'Variety of level-dificulties']
         }
       },
       seriesMultiSeries: [
