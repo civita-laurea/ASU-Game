@@ -119,10 +119,12 @@ const MapChart = () => {
   const classes = useStyles();
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(1);
+  const [reward, setReward] = useState(0);
   const [wrongAnsIndices, setWrongAnsIndices] = useState([]);
   const CorrectClick = () => {
     setCount1(count1 + 1)
     setCount2(1)
+    setReward(reward + 1)
   }
   return (
     <GridList className={classes.gridList} cellHeight={300} >
